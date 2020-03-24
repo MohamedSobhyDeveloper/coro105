@@ -5,7 +5,35 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <TextView
+        android:id="@+id/messagetv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="انتظر جارى الحصول على النتائج...."
+        android:textAlignment="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:visibility="visible"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/spin_kit"
+        tools:ignore="HardcodedText" />
 
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/colorPrimaryDark"
+
+        />
     <TextView
         android:id="@+id/greenview"
         android:layout_width="match_parent"
@@ -17,7 +45,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:padding="10dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:background="@drawable/roundedbuttondrawagreen"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
@@ -70,6 +98,25 @@
         android:layout_centerInParent="true"
 
         tools:ignore="HardcodedText" />
+
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="قم باعادة الاختبار"
+        android:background="@drawable/roundedbuttonred"
+        android:textColor="@color/white"
+        android:padding="18dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="visible"
+        />
+
 
 
 </RelativeLayout>

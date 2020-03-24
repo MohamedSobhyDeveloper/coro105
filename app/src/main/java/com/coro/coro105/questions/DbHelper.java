@@ -48,15 +48,15 @@ public class DbHelper extends SQLiteOpenHelper {
     private void addQuestions() {
         Question q1 = new Question("هل أنت أحد العاملين بالقطاع أو العزل الصحي ؟ ", "نعم", "لا", "نعم",2);
         this.addQuestionToDB(q1);
-        Question q2 = new Question("38 تعاني من ارتفاع درجة الحرارة أكثر من ؟", "نعم", "لا", "نعم",2);
+        Question q2 = new Question("هل تعاني من ارتفاع درجة الحرارة أكثر من 38 ؟", "نعم", "لا", "نعم",2);
         this.addQuestionToDB(q2);
-        Question q3 = new Question(" تعاني من سعال شديد أو متزايد ؟ ", "نعم", "لا","نعم",2);
+        Question q3 = new Question("هل تعاني من سعال شديد أو متزايد ؟ ", "نعم", "لا","نعم",2);
         this.addQuestionToDB(q3);
-        Question q4 = new Question(" تعاني من احتقان شديد بالحلق ؟  ", "نعم", "لا", "نعم",1);
+        Question q4 = new Question("هل تعاني من احتقان شديد بالحلق ؟  ", "نعم", "لا", "نعم",1);
         this.addQuestionToDB(q4);
-        Question q5 = new Question(" تعاني من القيئ أو اسهال ؟", "نعم", "لا", "نعم",0);
+        Question q5 = new Question("هل تعاني من القيئ أو اسهال ؟", "نعم", "لا", "نعم",0);
         this.addQuestionToDB(q5);
-        Question q6 = new Question("تعاني من مرض مزمن  :ضغط  /سكر  /قلب  /ربو أو أمراض مناعية ؟", "نعم", "لا", "نعم",1);
+        Question q6 = new Question("هل تعاني من مرض مزمن  :ضغط  /سكر  /قلب  /ربو أو أمراض مناعية ؟", "نعم", "لا", "نعم",1);
         this.addQuestionToDB(q6);
         Question q7 = new Question("هل قمت بزيارة أماكن سياحية أو دينية مثال:( قادم من العمرة / ايران / أوروبا / شرم الشيخ...  )؟  ", "نعم", "لا", "نعم",5);
         this.addQuestionToDB(q7);

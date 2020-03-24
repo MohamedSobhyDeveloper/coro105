@@ -1,5 +1,6 @@
 package com.coro.coro105;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.coro.coro105.questions.DbHelper;
@@ -93,5 +95,33 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder ab = new AlertDialog.Builder(MainActivity.this);
+        ab.setTitle("coro105");
+        ab.setMessage("هل تريد الخروج من التطبيق ؟");
+        ab.setPositiveButton("نعم", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                //if you want to kill app . from other then your main avtivity.(Launcher)
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+
+                //if you want to finish just current activity
+
+                finish();
+            }
+        });
+        ab.setNegativeButton("لا", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        ab.show();
     }
 }
