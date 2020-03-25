@@ -73,7 +73,7 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         AlertDialog.Builder ab = new AlertDialog.Builder(ResultActivity.this);
-        ab.setTitle("coro 105");
+        ab.setTitle("coro105");
         ab.setMessage("هل تريد الخروج من التطبيق ؟");
         ab.setPositiveButton("نعم", (dialog, which) -> {
             dialog.dismiss();
