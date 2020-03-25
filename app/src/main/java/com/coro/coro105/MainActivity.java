@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.coro.coro105.questions.DbHelper;
 import com.coro.coro105.questions.Question;
 
-import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Score", "Your score: "+score);
             }
 
-            if(quid<9){
+            if(quid<questionList.size()){
                 currentQuestion = questionList.get(quid);
                 setQuestionView();
             }else{
