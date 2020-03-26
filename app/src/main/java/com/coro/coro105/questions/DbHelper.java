@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.coro.coro105.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String KEY_OPTA = "optA";
     private static final String KEY_OPTB = "optB";
     private static final String KEY_Score = "score";
+    private static final String KEY_image = "image";
 
 
     private SQLiteDatabase dbase;
@@ -39,30 +42,30 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         dbase = db;
-        String sqlQuery = String.format("CREATE TABLE IF NOT EXISTS %s ( %s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT,%s INTEGER )", DB_TABLE, KEY_ID, KEY_QUES, KEY_ANSWER, KEY_OPTA, KEY_OPTB,KEY_Score);
+        String sqlQuery = String.format("CREATE TABLE IF NOT EXISTS %s ( %s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT,%s INTEGER,%s INTEGER )", DB_TABLE, KEY_ID, KEY_QUES, KEY_ANSWER, KEY_OPTA, KEY_OPTB,KEY_Score,KEY_image);
         Log.d("TaskDBHelper", "Query to form table" + sqlQuery);
         db.execSQL(sqlQuery);
         addQuestions();
     }
 
     private void addQuestions() {
-        Question q1 = new Question("هل أنت أحد العاملين بالقطاع أو العزل الصحي ؟ ", "نعم", "لا", "نعم",2);
+        Question q1 = new Question("هل أنت أحد العاملين بالقطاع أو العزل الصحي ؟ ", "نعم", "لا", "نعم",2, R.drawable.image1);
         this.addQuestionToDB(q1);
-        Question q2 = new Question("هل تعاني من ارتفاع درجة الحرارة أكثر من 38 ؟", "نعم", "لا", "نعم",2);
+        Question q2 = new Question("هل تعاني من ارتفاع درجة الحرارة أكثر من 38 ؟", "نعم", "لا", "نعم",2, R.drawable.image2);
         this.addQuestionToDB(q2);
-        Question q3 = new Question("هل تعاني من سعال شديد أو متزايد ؟ ", "نعم", "لا","نعم",2);
+        Question q3 = new Question("هل تعاني من سعال شديد أو متزايد ؟ ", "نعم", "لا","نعم",2, R.drawable.image3);
         this.addQuestionToDB(q3);
-        Question q4 = new Question("هل تعاني من احتقان شديد بالحلق ؟  ", "نعم", "لا", "نعم",1);
+        Question q4 = new Question("هل تعاني من احتقان شديد بالحلق ؟  ", "نعم", "لا", "نعم",1, R.drawable.image4);
         this.addQuestionToDB(q4);
-        Question q5 = new Question("هل تعاني من القيئ أو اسهال ؟", "نعم", "لا", "نعم",0);
+        Question q5 = new Question("هل تعاني من القيئ أو اسهال ؟", "نعم", "لا", "نعم",0, R.drawable.image5);
         this.addQuestionToDB(q5);
-        Question q6 = new Question("هل تعاني من مرض مزمن  :ضغط  /سكر  /قلب  /ربو أو أمراض مناعية ؟", "نعم", "لا", "نعم",1);
+        Question q6 = new Question("هل تعاني من مرض مزمن  :ضغط  /سكر  /قلب  /ربو  ؟", "نعم", "لا", "نعم",1, R.drawable.image6);
         this.addQuestionToDB(q6);
-        Question q7 = new Question("هل قمت بزيارة أماكن سياحية أو دينية مثال:( قادم من العمرة / ايران / أوروبا / شرم الشيخ...  )؟  ", "نعم", "لا", "نعم",5);
+        Question q7 = new Question("هل قمت بزيارة أماكن سياحية أو دينية مثال:( قادم من العمرة / أوروبا ...  ) فى الفترة الاخيرة؟  ", "نعم", "لا", "نعم",5, R.drawable.image7);
         this.addQuestionToDB(q7);
-        Question q8 = new Question("هل قمت بزيارة مركز صحي ثبت فيه وجود كورونا مثال: (مستشفى  /عيادة  /معمل تحاليل أو وحدة صحية)؟ ", "نعم", "لا", "نعم",3);
+        Question q8 = new Question("هل قمت بزيارة مركز صحي ثبت فيه وجود كورونا مثال: (مستشفى  /عيادة  /معمل تحاليل أو وحدة صحية)؟ ", "نعم", "لا", "نعم",3,R.drawable.image8);
         this.addQuestionToDB(q8);
-        Question q9 = new Question("هل قمت بمخالطه لحالة إلتهاب تنفسي حاد ؟ ", "نعم", "لا", "نعم",4);
+        Question q9 = new Question("هل قمت بمخالطه لحالة إلتهاب تنفسي حاد ؟ ", "نعم", "لا", "نعم",4, R.drawable.image9);
         this.addQuestionToDB(q9);
 
     }
@@ -74,6 +77,8 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(KEY_OPTA,q.getOptA());
         values.put(KEY_OPTB,q.getOptB());
         values.put(KEY_Score,q.getScore());
+        values.put(KEY_image,q.getImage());
+
 
         dbase.insert(DB_TABLE, null, values);
     }
@@ -95,6 +100,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 q.setOptA(cursor.getString(3));
                 q.setOptB(cursor.getString(4));
                 q.setScore(cursor.getInt(5));
+                q.setImage(cursor.getInt(6));
 
                 questionList.add(q);
 

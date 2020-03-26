@@ -16,7 +16,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:padding="15dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
@@ -31,9 +31,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:visibility="gone"
         app:SpinKit_Color="@color/colorPrimaryDark"
 
         />
+
+
+
     <TextView
         android:id="@+id/greenview"
         android:layout_width="match_parent"
@@ -45,7 +49,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:padding="10dp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:background="@drawable/roundedbuttondrawagreen"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
@@ -100,22 +104,52 @@
         tools:ignore="HardcodedText" />
 
 
-    <Button
-        android:id="@+id/nextbtn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="قم باعادة الاختبار"
-        android:background="@drawable/roundedbuttonred"
-        android:textColor="@color/white"
-        android:padding="18dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:visibility="gone"
-        />
+        >
+        <Button
+            android:id="@+id/nextbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="قم باعادة الاختبار"
+            android:background="@drawable/roundedbuttonred"
+            android:textColor="@color/black"
+            android:padding="18dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"
+            android:layout_above="@id/helpview"
+            />
+
+        <TextView
+            android:id="@+id/helpview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="برنامج تطوعى استرشادى من شباب مصر وليس لة علاقة بوزارة الصحة او اى جهة حكومية"
+            android:textAlignment="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:padding="15dp"
+            android:visibility="visible"
+            android:background="@drawable/roundedbuttondrawablewhiteborder"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:textSize="15dp"
+            tools:ignore="HardcodedText"
+            />
+
+
+    </LinearLayout>
+
 
 
 

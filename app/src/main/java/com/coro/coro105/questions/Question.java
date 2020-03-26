@@ -1,5 +1,7 @@
 package com.coro.coro105.questions;
 
+import com.coro.coro105.R;
+
 /**
  * Created by JoseThomas on 3/31/2016.
  */
@@ -10,22 +12,33 @@ public class Question {
     private String optB;
     private String answer;
     private int score;
+    private int image;
 
     public Question(){
         id=0;
         score=0;
+        image= 0;
         question = "";
         optA = "";
         optB = "";
         answer = "";
     }
 
-    public Question(String question, String optA, String optB, String answer,int score){
+    public Question(String question, String optA, String optB, String answer,int score,int image){
         this.question = question;
         this.optA = optA;
         this.optB = optB;
         this.answer = answer;
         this.score=score;
+        this.image=image;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public int getScore() {

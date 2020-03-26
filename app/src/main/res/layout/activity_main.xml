@@ -3,68 +3,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white">
+    android:background="@color/green">
 
 
     <TextView
-        android:id="@+id/question"
+        android:id="@+id/question_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/رقم السؤال 9"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:padding="10dp"
+        android:layoutDirection="rtl"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="end"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp" />
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        tools:text="تعاني من مرض مزمن  :ضغط  /سكر  /قلب  /ربو أو أمراض مناعية ؟(نقاط"
-        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/question_id"
+        android:orientation="vertical"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout_questions"
         android:background="@drawable/roundedbuttondrawablewhite"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        >
+
+
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            tools:text="تعاني من مرض مزمن  :ضغط  /سكر  /قلب  /ربو أو أمراض مناعية ؟(نقاط"
+            android:textAlignment="center"
+             android:textColor="@color/white"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:padding="10dp"
+            android:layout_below="@+id/question">
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="لا"/>
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="نعم"/>
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerInParent="false"
+        android:id="@+id/imageview"
+        android:src="@drawable/image1"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@+id/layout_questions"
 
         />
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="match_parent"
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="20dp"
+    android:layout_alignParentBottom="true"
+
+    >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="false"
+        android:src="@drawable/logo"
+        android:layout_below="@+id/layout_questions"
+
+        />
+    <TextView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/question">
-
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="لا"/>
-
-        <RadioButton
-            android:id="@+id/radio0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:text="نعم"/>
-
-
-    </RadioGroup>
-
+        android:layout_weight="1"
+        />
     <Button
         android:id="@+id/nextbtn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="التالى"
-        android:background="@drawable/roundedbuttonred"
+        android:text="السابق"
         android:textColor="@color/white"
         android:padding="18dp"
         android:textSize="20dp"
+        android:background="@drawable/roundedbuttondrawableblue"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:onClick="btClick"/>
+
+</LinearLayout>
+
 
 
 
