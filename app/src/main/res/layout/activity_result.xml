@@ -1,55 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/green"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        android:id="@+id/imageviewer"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"/>
+
+    <RadioGroup
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="258dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/page_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:id="@+id/page1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+
+        <RadioButton
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:id="@+id/page2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:id="@+id/page3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:id="@+id/page4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:id="@+id/page5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+
+
 
     <TextView
         android:id="@+id/messagetv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="انتظر جارى الحصول على النتائج...."
-        android:textAlignment="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_above="@+id/spin_kit"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:padding="15dp"
-        android:visibility="gone"
+        android:text="انتظر جارى الحصول على النتائج...."
+        android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
         android:textSize="15dp"
-        android:layout_centerInParent="true"
-        android:layout_above="@+id/spin_kit"
-        tools:ignore="HardcodedText" />
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteX="9dp" />
 
     <com.github.ybq.android.spinkit.SpinKitView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/spin_kit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="gone"
+        android:visibility="visible"
         app:SpinKit_Color="@color/colorPrimaryDark"
 
         />
 
 
-
     <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/greenview"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:text="التزم بيتك"
         android:textAlignment="center"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="115dp"
         android:gravity="center"
         android:padding="10dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:background="@drawable/roundedbuttondrawagreen"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
@@ -58,17 +128,17 @@
         android:layout_centerInParent="true"
 
         tools:ignore="HardcodedText" />
-
-
     <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/yellowview"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:text="استشر طبيب"
         android:textAlignment="center"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="115dp"
         android:gravity="center"
         android:padding="10dp"
         android:visibility="gone"
@@ -83,14 +153,16 @@
 
 
     <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/redview"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:text="اتصال بطوارئ 105"
+        android:layout_height="120dp"
+        android:text="اضغط هنا للاتصال بطوارئ 105"
         android:textAlignment="center"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="115dp"
         android:gravity="center"
         android:padding="10dp"
         android:visibility="gone"
@@ -103,54 +175,53 @@
 
         tools:ignore="HardcodedText" />
 
-
     <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/linear"
+        android:visibility="gone"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         >
+
         <Button
             android:id="@+id/nextbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="قم باعادة الاختبار"
-            android:background="@drawable/roundedbuttonred"
-            android:textColor="@color/black"
-            android:padding="18dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="5dp"
+            android:layout_above="@id/helpview"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:visibility="visible"
-            android:layout_above="@id/helpview"
-            />
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/roundedbuttonred"
+            android:padding="18dp"
+            android:text="قم باعادة الاختبار"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/helpview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/roundedbuttondrawablewhiteborder"
+            android:padding="15dp"
             android:text="برنامج تطوعى استرشادى من شباب مصر وليس لة علاقة بوزارة الصحة او اى جهة حكومية"
             android:textAlignment="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            android:visibility="visible"
-            android:background="@drawable/roundedbuttondrawablewhiteborder"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"
             android:textSize="15dp"
-            tools:ignore="HardcodedText"
-            />
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:ignore="HardcodedText" />
 
 
     </LinearLayout>
 
 
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

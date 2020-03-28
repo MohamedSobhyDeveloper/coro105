@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/green"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/green">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/question_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/black"
+        android:gravity="end"
+        android:padding="10dp"
         android:text="/رقم السؤال 9"
         android:textAlignment="viewEnd"
-        android:textColor="@color/white"
-        android:background="@color/black"
-        android:padding="10dp"
-        android:layoutDirection="rtl"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:layout_marginEnd="10dp"
-        android:layout_alignParentEnd="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="end"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp" />
-
-
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/question_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/question_id"
@@ -45,10 +45,10 @@
         <TextView
             android:id="@+id/question"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             tools:text="تعاني من مرض مزمن  :ضغط  /سكر  /قلب  /ربو أو أمراض مناعية ؟(نقاط"
             android:textAlignment="center"
-             android:textColor="@color/white"
+            android:textColor="@color/white"
             android:gravity="center"
             android:padding="10dp"
             android:textStyle="bold"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:padding="10dp"
             android:layout_below="@+id/question">
 
@@ -91,64 +91,62 @@
 
     </LinearLayout>
 
-
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_centerInParent="false"
+        app:layout_constraintTop_toBottomOf="@+id/layout_questions"
         android:id="@+id/imageview"
-        android:src="@drawable/image1"
-        android:layout_marginTop="20dp"
-        android:scaleType="fitXY"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
         android:layout_below="@+id/layout_questions"
-
-        />
-
-
-
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:layout_marginBottom="20dp"
-    android:layout_alignParentBottom="true"
-
-    >
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         android:layout_centerInParent="false"
-        android:src="@drawable/logo"
-        android:layout_below="@+id/layout_questions"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/image1"
 
         />
-    <TextView
-        android:layout_width="0dp"
+
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
-    <Button
-        android:id="@+id/nextbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="السابق"
-        android:textColor="@color/white"
-        android:padding="18dp"
-        android:textSize="20dp"
-        android:background="@drawable/roundedbuttondrawableblue"
-        android:textStyle="bold"
-        android:onClick="btClick"/>
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
 
-</LinearLayout>
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="false"
+            android:src="@drawable/logo"
+            android:layout_below="@+id/layout_questions"
+
+            />
+
+        <TextView
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/nextbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="قم باعاده الاختبار"
+            android:textColor="@color/white"
+            android:padding="18dp"
+            android:textSize="20dp"
+            android:background="@drawable/roundedbuttondrawableblue"
+            android:textStyle="bold"
+            android:onClick="btClick"/>
+
+    </LinearLayout>
 
 
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.coro.coro105;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Process;
 import android.util.Log;
@@ -18,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.coro.coro105.questions.DbHelper;
 import com.coro.coro105.questions.Question;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
 
 
         DbHelper dbHelper = new DbHelper(this);
@@ -175,10 +174,11 @@ public class MainActivity extends AppCompatActivity {
     public void onViewClicked() {
 
       if (quid!=1){
-          currentQuestion = questionList.get(quid-2);
-          getprevQuestionView();
-
-
+     //     currentQuestion = questionList.get(quid-2);
+       //   getprevQuestionView();
+Intent intent=new Intent(MainActivity.this,MainActivity.class);
+startActivity(intent);
+finish();
       }
 
     }
@@ -214,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
         ab.setNegativeButton("لا", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
                 dialog.dismiss();
             }
         });
