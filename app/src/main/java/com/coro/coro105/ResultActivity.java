@@ -48,8 +48,8 @@ public class ResultActivity extends AppCompatActivity implements ViewPager.OnPag
 
     int currentPage = 0;
     Timer timer;
-    final long DELAY_MS = 500;
-    final long PERIOD_MS = 6000;
+    final long DELAY_MS = 700;
+    final long PERIOD_MS = 8000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class ResultActivity extends AppCompatActivity implements ViewPager.OnPag
         imageviewer.setAdapter(imageAdapter);
         final Handler handler = new Handler();
         final Runnable Update = () -> {
-            if (currentPage == 5-1) {
+            if (currentPage == 6-1) {
                 currentPage = 0;
             }
             imageviewer.setCurrentItem(currentPage++, true);

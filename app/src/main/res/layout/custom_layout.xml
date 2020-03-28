@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@drawable/roundedbuttondrawablewhiteborder"
     android:layout_height="match_parent">
 
 
@@ -12,8 +13,10 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/custom_imageview"
         android:src="@drawable/sliderone"
-
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
-        android:layout_height="250dp"/>
+        android:layout_height="wrap_content"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
