@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
     private void setQuestionView() {
         question.setText(currentQuestion.getQuestion());
         imageview.setImageResource(currentQuestion.getImage());
-        questionId.setText(" رقم السؤال 9 /"+" "+currentQuestion.getId());
+        questionId.setText(9+" / "+currentQuestion.getId());
         radio0.setText(currentQuestion.getOptA());
         radio1.setText(currentQuestion.getOptB());
         quid++;
